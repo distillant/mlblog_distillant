@@ -1,0 +1,41 @@
+{
+  "name": "mlblog_distillant",
+  "version": "1.0.0",
+  "description": "ml blog exercise",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start",
+    "debug": "node --inspect server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/distillant/mlblog_distillant.git"
+  },
+  "author": "distillant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/distillant/mlblog_distillant/issues"
+  },
+  "homepage": "https://github.com/distillant/mlblog_distillant#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase": "^4.9.1",
+    "firebase-admin": "^5.8.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^4.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "session-file-store": "^1.2.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0"
+  }
+}

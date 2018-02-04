@@ -1,0 +1,13 @@
+/**
+ * Created by patrick conroy on 2/4/18.
+ */
+{
+    "env": {
+    "test": {
+        "presets": [
+            ["env", { "modules": "commonjs" }],
+            "next/babel"
+        ]
+    }
+}
+}
