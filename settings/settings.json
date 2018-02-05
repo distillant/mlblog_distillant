@@ -1,0 +1,35 @@
+{
+    "blogTitle":"Configurable Title",
+    "pages":[
+        {
+            "menuTitle": "HOME",
+            "PageTitle":"CleanBlog",
+            "subTitle":"Full featured, responsive Hexo theme",
+            "pageUrl":"home"
+        },
+        {
+            "menuTitle": "ARCHIVES",
+            "PageTitle":"Archives",
+            "pageUrl":"archives"
+        },
+        {
+            "menuTitle": "TAGS",
+            "PageTitle":"Tags",
+            "pageUrl":"tags"
+        },
+        {
+            "menuTitle": "CATEGORIES",
+            "PageTitle":"Categories",
+            "pageUrl":"categories"
+        },
+        {
+            "icon":"github",
+            "pageUrl":"https://github.com/distillant/mlblog_distillant"
+        }
+
+    ],
+    "Footer":{
+        "copywrite":"© 2017 John Doe"
+    }
+}
+
