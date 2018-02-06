@@ -2,7 +2,7 @@
  * Created by patrick conroy on 2/6/18.
  */
 
-import Heading from '../components/Heading/Heading';
+import Heading from '../Heading/Heading';
 
 const globalStyle=`
       @import url("http://fonts.googleapis.com/css?family=Open+Sans:300i,400i,600i,700i,800i,400,300,600,700,800");
@@ -16,14 +16,12 @@ const globalStyle=`
       }
 
     `;
-const Layout=function(props)=>(
+const Layout=(props)=>(
     <div>
-        Heading(props);
-        {props.children}
-        <ArticleContent content={article.content} />
+        <Heading article={props.article} page={props.page}/>
+            {props.children}
         <style jsx global>{globalStyle}</style>
 
     </div>
-
 )
 export default Layout;
