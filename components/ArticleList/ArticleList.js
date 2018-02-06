@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import moment from 'moment'
 const formatArticleDate=(articleDate) =>{
-    return moment(articleDate).format('MMMM Do YYYY, h:mm:ss a')
+    return moment(articleDate).format('MMMM Do YYYY')
 }
 
 const ArticleListItem= ({article}) => (

@@ -10,15 +10,16 @@ var articles=[{
     "username" : "sampleUser",
     "datetime" : "2016-06-30T19:13:39+00:00"
 },{title:"Hello World!"}];
-const ArticlesPage = () => (
+const HomePage = () => (
     <div>
-       <Heading></Heading>
+       <Heading page={{}}></Heading>
         <ArticleList articles={articles} />
         <style jsx global>{`
       @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
       body {
             margin:0;
             padding: 0;
+            rgb(64, 64, 64);
       }
 
     `}</style>
@@ -27,7 +28,7 @@ const ArticlesPage = () => (
 
 );
 
-export default ArticlesPage;
+export default HomePage;
 /*import connectToDB from '../db/connectToDB';
 
 
