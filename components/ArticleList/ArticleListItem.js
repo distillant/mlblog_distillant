@@ -1,16 +1,19 @@
 /**
  * Created by patrick conroy on 2/7/18.
  */
+import Link from 'next/link'
 import moment from 'moment'
 const formatArticleDate=(articleDate) =>{
     return moment(articleDate).format('MMMM Do YYYY')
 }
 
-const ArticleListItem= ({article}) => (
+const ArticleListItem= ({article, id}) => (
     <li>
-        <h2>
-            {article.title}
-        </h2>
+        <a onClick={()=>{window.location.href=window.location.origin+"/article?id=0"}}>
+            <h2>
+                {article.title}
+            </h2>
+        </a>
         <p>{(article.username) ? "Posted by "+article.username + " on ": "" }
 
             {(article.datetime)? formatArticleDate(article.datetime):""}</p>

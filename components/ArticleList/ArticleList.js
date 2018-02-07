@@ -12,7 +12,7 @@ const ArticleList= ({articles})=>{
                 <ul>
                     {articles.map((article, i) => (
 
-                        <ArticleListItem article={article} key={i}></ArticleListItem>
+                        <ArticleListItem article={article} id={i} key={i}></ArticleListItem>
                     ))
                     }
                 </ul>

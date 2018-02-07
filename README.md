@@ -5,7 +5,7 @@ This app uses: NextJS, React, Redux,Redux Sagas and Firebase, Firebase
 the backend entry point is server.js
 pages/index.js is the front end entry point
 pages/article is for displaying individual articles but implementation is incomplete.
-    
+
 Server Setup
 
 ## Installation

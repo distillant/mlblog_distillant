@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/distillant/mlblog_distillant#readme",
   "dependencies": {
-    "es6-promise": "4.1.1",
     "body-parser": "^1.18.2",
+    "es6-promise": "4.1.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "firebase": "^4.9.1",
@@ -38,6 +38,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
+    "redux-saga-firebase": "^0.11.0",
     "session-file-store": "^1.2.0"
   },
   "devDependencies": {

@@ -1,10 +1,12 @@
+import {connect} from "react-redux";
+
 /**
  * Created by patrick conroy on 2/6/18.
  */
 
-const ArticleContent = ({content}) =>(
+const ArticleContent = ({article}) =>(
     <div className="article-content">
-        <p dangerouslySetInnerHTML={{__html: content.replace(/\n/g,'<br/>')}}></p>
+        <p >{article.content}</p>
 
     <style jsx>
         {`
@@ -26,4 +28,6 @@ const ArticleContent = ({content}) =>(
     </div>
 )
 
-export default ArticleContent;
+
+
+export default connect(state => state)(ArticleContent)

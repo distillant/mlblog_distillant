@@ -16,10 +16,11 @@ const formatArticleDate=(articleDate) =>{
                 const page=props.page
                 return (
                     <div className="page-title">
-                        <h1 >PAGE_TITLE</h1>
-                        {(page && page.subTitle) ? (<div class="subtitle">
+                        <h1 >{page.PageTitle}</h1>
+                        {(page && page.subTitle) ? (<div className="subtitle">
                             <hr/>
-                            {page.subTitle}</div>) : ("")}
+                            <h2>
+                                {page.subTitle}</h2></div>) : ("")}
                         <style jsx>{`
                     .page-title
                     {
@@ -29,6 +30,14 @@ const formatArticleDate=(articleDate) =>{
                         transform: translateX(-50%) translateY(-50%);
                         color: #fff;
                     }
+                    h2
+                    {
+                        font-size: 24px;
+                        line-height: 1.1;
+                        display: block;
+                        font-weight: 300;
+                        margin: 10px 0 0;
+                        }
                     h1
                     {
                         font-size: 50px;

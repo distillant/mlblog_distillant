@@ -1,7 +1,8 @@
 export const actionTypes = {
     FAILURE: 'FAILURE',
     LOAD_ARTICLES:"LOAD_ARTICLES",
-    OPEN_ARTICLE: 'OPEN_ARTICLE',
+    LOAD_ARTICLE: 'OPEN_ARTICLE',
+    LOAD_ARTICLE_SUCCESS:'LOAD_ARTICLE_SUCCESS',
     LOAD_DATA: 'LOAD_DATA',
     LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
     LOGIN: 'LOG_IN',
@@ -20,6 +21,12 @@ export function login (user){
   }
 }
 
+export function loadArticleSuccess (data) {
+    return {
+        type: actionTypes.LOAD_ARTICLE_SUCCESS,
+        data
+    }
+}
 export function connectToFirebase (){
     return {
         type: actionTypes.CONNECT_TO_FIREBASE,
@@ -43,6 +50,12 @@ export function loggedIn (user){
 export function loadArticles (data) {
     return {
         type: actionTypes.LOAD_ARTICLES,
+        data
+    }
+}
+export function loadArticle (data) {
+    return {
+        type: actionTypes.LOAD_ARTICLE,
         data
     }
 }

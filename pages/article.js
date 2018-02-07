@@ -4,14 +4,25 @@
 import ArticleContent from '../components/ArticleContent/ArticleContent';
 const article = require("../testData/article");
 import Layout from '../components/Layout/index';
+import {loadArticle} from "../actions";
+import {withReduxSaga} from "../store";
 
 const ArticlePage = () => (
     <div>
-        <Layout article={article}>
-            <ArticleContent content={article.content} />
+        <Layout >
+            <ArticleContent  />
         </Layout>
 
     </div>
 );
 
-export default ArticlePage;
+
+ArticlePage.getInitialProps= async ({store}) => {
+    store.dispatch(loadArticle(1))
+
+
+}
+
+
+
+export default withReduxSaga(ArticlePage)

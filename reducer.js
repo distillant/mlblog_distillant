@@ -3,8 +3,10 @@ import {actionTypes} from './actions'
 export const initialState={
   settings:{},
   page:{
-    title:"Home",
-    url: "/"
+      "menuTitle": "HOME",
+      "PageTitle":"CleanBlog",
+      "subTitle":"Full featured, responsive Hexo theme",
+      "pageUrl":"home"
   },
   articleId:null,
   user:null,
@@ -18,10 +20,16 @@ export const initialState={
 
 function reducer (state = initialState, action) {
   switch (action.type) {
+
+
     case actionTypes.FAILURE:
       return {
         ...state,
         ...{error: action.error}
+      }
+      case actionTypes.LOAD_ARTICLE:
+          return {
+              ...state
       }
       case actionTypes.LOAD_ARTICLES:
           return {
@@ -32,6 +40,11 @@ function reducer (state = initialState, action) {
           return {
               ...state,
               ...{articles: action.data}
+          }
+      case actionTypes.LOAD_ARTICLE_SUCCESS:
+          return {
+              ...state,
+              ...{article: action.data}
           }
       case actionTypes.ADD_ARTICLE:
       return {

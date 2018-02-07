@@ -16,7 +16,7 @@ const HomePage = () => (
 
 HomePage.getInitialProps= async   ({store}) => {
     store.dispatch(loadArticles())
-    store.dispatch(connectToFirebase())
+
 
 }
 

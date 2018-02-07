@@ -1,6 +1,5 @@
 .idea
 .next
 node_modules
-credentials/.ServerSide.js
-credentials/.clientSide.js
+credentials
 pages/authfunctions.js
