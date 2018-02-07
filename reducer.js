@@ -50,6 +50,11 @@ function reducer (state = initialState, action) {
         ...state,
         ...{user: action.data}
       }
+      case actionTypes.LOGGED_IN:
+          return {
+              ...state,
+              ...{user: action.data}
+          }
 
     default:
       return state

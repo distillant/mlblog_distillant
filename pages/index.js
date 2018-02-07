@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import Layout from '../components/Layout/index';
 
 import ArticleList from '../components/ArticleList/ArticleList';
-import {loadArticles} from '../actions'
+import {loadArticles, connectToFirebase} from '../actions'
 import {withReduxSaga} from '../store'
 
 const HomePage = () => (
     <div>
-        <Layout page={{}}>
+        <Layout   >
         <ArticleList  />
         </Layout>
     </div>
@@ -16,6 +16,7 @@ const HomePage = () => (
 
 HomePage.getInitialProps= async   ({store}) => {
     store.dispatch(loadArticles())
+    store.dispatch(connectToFirebase())
 
 }
 

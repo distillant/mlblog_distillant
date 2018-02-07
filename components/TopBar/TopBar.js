@@ -5,13 +5,21 @@ const blogSettings=require('../../settings/settings.json');
 const FontAwesome = require('react-fontawesome');
 import Link from 'next/link'
 
-const PageLink= ({page}) =>
+const PageLink= ({page, onClick}) =>
     (
         <div className="page-link">
-            <Link href={"/"+page.pageUrl}>
+            {(typeof onClick==='function') ? (
+                <a onClick={function(event) {
+
+                    event.preventDefault();
+                    onClick();
+                    return false;
+                }}>{page.menuTitle}</a>
+            ): (
+            <Link href={page}>
                 <a>{(page.icon)? (<FontAwesome size="2x" name={page.icon}/>) : ""}
                     {page.menuTitle}</a>
-            </Link>
+            </Link>)}
             <style jsx>{`
              a
              {
@@ -56,10 +64,10 @@ const TopBar = (props) =>(
 
             { ////login/Logoout Button
                 (props.user && props.user.userName) ?
-                    (<PageLink
+                    (<PageLink onClick={props.actions.logout}
                         page={ {"menuTitle": "Sign Out", "pageUrl":"signout"}}>
                     </PageLink>) :
-                    (<PageLink
+                    (<PageLink onClick={props.actions.login}
                         page={{"menuTitle": "Sign In","pageUrl":"signin"}}>
                     </PageLink>)
                 }

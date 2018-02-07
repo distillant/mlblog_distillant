@@ -113,7 +113,7 @@ const HeroBlock=(props) => {
 
     return (<div>
         <div className="hero-block">
-            <TopBar/>
+            <TopBar actions={{login:props.actions.login, logout:props.actions.logout}} />
             {TitleBlock(props) }
         </div>
         <style jsx>{`
