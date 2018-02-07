@@ -3,7 +3,7 @@
  */
 
 const admin = require('firebase-admin');
-const databaseURL=(require("../credentials/ClientSide")).firebaseConfig.databaseURL;
+const databaseURL=(require("../credentials/clientSide")).firebaseConfig.databaseURL;
 
 const firebase = admin.initializeApp({
     credential: admin.credential.cert(require('../credentials/ServerSide').firebaseServerAuthCreds),
