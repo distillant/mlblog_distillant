@@ -9,29 +9,29 @@ const formatArticleDate=(articleDate) =>{
     return moment(articleDate).format('MMMM Do YYYY')
 }
 
-const TitleBlock =(props)  => {
+    const TitleBlock =(props)  => {
 
-        if (typeof props.page !== 'undefined')
-        {
-            const page=props.page
-            return (
-                <div className="page-title">
-                    <h1 >PAGE_TITLE</h1>
-                    {(page && page.subTitle) ? (<div class="subtitle">
-                        <hr/>
-                        {page.subTitle}</div>) : ("")}
-                    <style jsx>{`
-                .page-title
-                {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                    color: #fff;
-                }
-                h1
-                {
-                    font-size: 50px;
+            if (typeof props.page !== 'undefined')
+            {
+                const page=props.page
+                return (
+                    <div className="page-title">
+                        <h1 >PAGE_TITLE</h1>
+                        {(page && page.subTitle) ? (<div class="subtitle">
+                            <hr/>
+                            {page.subTitle}</div>) : ("")}
+                        <style jsx>{`
+                    .page-title
+                    {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        color: #fff;
+                    }
+                    h1
+                    {
+                        font-size: 50px;
                     font-weight: 800;
                     text-shadow: none;
                     font-size: 50px;

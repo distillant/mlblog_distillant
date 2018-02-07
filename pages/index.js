@@ -1,38 +1,32 @@
 import React, { Component } from 'react'
 import Layout from '../components/Layout/index';
-import {ArticleList} from '../components/ArticleList/ArticleList';
 
-const articles=require("../testData/articles")
+import ArticleList from '../components/ArticleList/ArticleList';
+import {loadArticles} from '../actions'
+import {withReduxSaga} from '../store'
 
 const HomePage = () => (
     <div>
         <Layout page={{}}>
-        <ArticleList articles={articles.articles} />
+        <ArticleList  />
         </Layout>
     </div>
 );
 
-export default HomePage;
-/*import connectToDB from '../db/connectToDB';
 
+HomePage.getInitialProps= async   ({store}) => {
+    store.dispatch(loadArticles())
 
+}
 
-var Index= ({articles}) => (
-    <div>Welcome to next.js!
-    <p>Articles:
-        {articles}
-    </p>
-    </div>
-)
-
-Index.getInitialProps = async () =>  {
+/*
+HomePage.getInitialProps = async () =>  {
     const db = await connectToDB();
-    console.log("db",db);
+
 
     const articles =await db.child('articles').once('value')
     return {articles: JSON.stringify(articles)}
-}
+}*/
 
-export default Index;
+export default withReduxSaga(HomePage)
 
-*/

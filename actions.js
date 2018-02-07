@@ -1,22 +1,38 @@
 export const actionTypes = {
   FAILURE: 'FAILURE',
-  INCREMENT: 'INCREMENT',
+  LOAD_ARTICLES:"LOAD_ARTICLES",
+  LOGOUT:'LOGOUT',
+  OPEN_ARTICLE: 'OPEN_ARTICLE',
   LOAD_DATA: 'LOAD_DATA',
   LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
-  START_CLOCK: 'START_CLOCK',
-  TICK_CLOCK: 'TICK_CLOCK'
+  LOGIN: 'LOG_IN',
+  UPDATE_ARTICLES: 'UPDATE_ARTICLES',
+  ADD_COMMENT:'ADD_COMMENT',
+  ADD_ARTICLE:'ADD_ARTICLES'
+}
+export function Login (user){
+  return {
+      type: actionTypes.LOGIN,
+      user
+  }
 }
 
+export function loadArticles (data) {
+    return {
+        type: actionTypes.LOAD_ARTICLES,
+        data
+    }
+}
+
+
 export function failure (error) {
-  return {
+   console.log("ERROR:",error)
+    return {
     type: actionTypes.FAILURE,
     error
   }
 }
 
-export function increment () {
-  return {type: actionTypes.INCREMENT}
-}
 
 export function loadData () {
   return {type: actionTypes.LOAD_DATA}
@@ -26,17 +42,5 @@ export function loadDataSuccess (data) {
   return {
     type: actionTypes.LOAD_DATA_SUCCESS,
     data
-  }
-}
-
-export function startClock () {
-  return {type: actionTypes.START_CLOCK}
-}
-
-export function tickClock (isServer) {
-  return {
-    type: actionTypes.TICK_CLOCK,
-    light: !isServer,
-    ts: Date.now()
   }
 }

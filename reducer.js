@@ -1,37 +1,54 @@
 import {actionTypes} from './actions'
 
-export const exampleInitialState = {
-  count: 0,
-  error: false,
-  lastUpdate: 0,
-  light: false,
-  placeholderData: null
-}
+export const initialState={
+  settings:{},
+  page:{
+    title:"Home",
+    url: "/"
+  },
+  articleId:null,
+  user:null,
+  articles:[],
+  article:{},
+  comments:{},
+    error:false
+};
 
-function reducer (state = exampleInitialState, action) {
+
+
+function reducer (state = initialState, action) {
   switch (action.type) {
     case actionTypes.FAILURE:
       return {
         ...state,
         ...{error: action.error}
       }
+      case actionTypes.LOAD_ARTICLES:
+          return {
+            ...state
 
-    case actionTypes.INCREMENT:
+        }
+      case actionTypes.LOAD_DATA_SUCCESS:
+          return {
+              ...state,
+              ...{articles: action.data}
+          }
+      case actionTypes.ADD_ARTICLE:
       return {
         ...state,
-        ...{count: state.count + 1}
+        ...{articles: action.data}
       }
 
-    case actionTypes.LOAD_DATA_SUCCESS:
+    case actionTypes.LOGOUT:
       return {
         ...state,
-        ...{placeholderData: action.data}
+        ...{user: null}
       }
 
-    case actionTypes.TICK_CLOCK:
+    case actionTypes.LOGIN:
       return {
         ...state,
-        ...{lastUpdate: action.ts, light: !!action.light}
+        ...{user: action.data}
       }
 
     default:

@@ -4,33 +4,37 @@ import {delay} from 'redux-saga'
 import {all, call, put, take, takeLatest} from 'redux-saga/effects'
 import es6promise from 'es6-promise'
 import 'isomorphic-unfetch'
-
-import {actionTypes, failure, loadDataSuccess, tickClock} from './actions'
+import {actionTypes, failure, loadDataSuccess, loadArticles} from './actions'
 
 es6promise.polyfill()
 
-function * runClockSaga () {
-  yield take(actionTypes.START_CLOCK)
-  while (true) {
-    yield put(tickClock(false))
-    yield call(delay, 800)
-  }
-}
 
-function * loadDataSaga () {
+function * loadArticlesSaga () {
+    try {
+
+       // const res = yeild db.child('articles').once('value')
+
+        const res = yield fetch('https://mlblog-distillant.firebaseio.com/articles.json')
+        const data = yield res.json()
+        yield put(loadDataSuccess(data))
+    } catch (err) {
+        yield put(failure(err))
+    }
+}
+/*
+function * loadArticleSaga () {
   try {
-    const res = yield fetch('https://jsonplaceholder.typicode.com/users')
+    const res = yield fetch('http://localhost:3000/static/testData/article.json)
     const data = yield res.json()
-    yield put(loadDataSuccess(data))
+    //yield put(loadDataSuccess(data))
   } catch (err) {
     yield put(failure(err))
   }
-}
+}*/
 
 function * rootSaga () {
   yield all([
-    call(runClockSaga),
-    takeLatest(actionTypes.LOAD_DATA, loadDataSaga)
+     takeLatest(actionTypes.LOAD_ARTICLES, loadArticlesSaga)
   ])
 }
 
