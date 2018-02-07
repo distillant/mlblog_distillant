@@ -1,4 +1,11 @@
-
+Demo located here:
+http://35.153.156.88:3000/
+## About the App
+This app uses: NextJS, React, Redux,Redux Sagas and Firebase, Firebase
+the backend entry point is server.js
+pages/index.js is the front end entry point
+pages/article is for displaying individual articles but implementation is incomplete.
+    
 Server Setup
 
 ## Installation
